@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-body bg-offwhite antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-primary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-clay text-white font-semibold px-8 py-4 rounded-lg hover:bg-clay-dark transition-colors duration-200 text-center inline-block;
+  }
+  .btn-secondary {
+    @apply border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg hover:bg-primary hover:text-white transition-colors duration-200 text-center inline-block;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  .card {
+    @apply bg-white rounded-card border border-border p-6 md:p-8 shadow-sm;
+  }
+  .form-select {
+    @apply w-full px-4 py-3 border border-clay/40 rounded-lg bg-white text-body-secondary appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-clay/50 focus:border-clay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234b5563' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+  }
+  .form-input {
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-white text-body focus:outline-none focus:ring-2 focus:ring-clay/50 focus:border-clay;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #9FB6A1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1F3A4A;
+}
+
