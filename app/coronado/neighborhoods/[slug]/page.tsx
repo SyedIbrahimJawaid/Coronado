@@ -125,9 +125,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {}
   }
 
+  const title = neighborhood.title ?? 'Coronado Neighborhood'
+  const description = neighborhood.description ?? 'Explore Coronado neighborhoods, listings, and local insights.'
+
   return genMeta({
-    title: `${neighborhood.title} | Coronado Neighborhoods | Crown Coronado`,
-    description: neighborhood.description,
+    title: `${title} | Coronado Neighborhoods | Crown Coronado`,
+    description,
     canonical: `/coronado/neighborhoods/${params.slug}/`,
   })
 }
@@ -139,12 +142,24 @@ export default function NeighborhoodPage({ params }: { params: { slug: string } 
     notFound()
   }
 
+  const data = {
+    title: neighborhood.title ?? 'Coronado Neighborhood',
+    description: neighborhood.description ?? 'Explore Coronado neighborhoods and local insights.',
+    intro: neighborhood.intro ?? 'Learn more about this Coronado neighborhood, including lifestyle highlights and local context.',
+    highlights: neighborhood.highlights ?? {
+      bestFor: [],
+      housingTypes: [],
+      parking: '',
+      beachAccess: '',
+    },
+  }
+
   return (
     <div className="min-h-screen">
       <HeroSplit
         content={{
-          headline: neighborhood.title,
-          subheadline: neighborhood.description,
+          headline: data.title,
+          subheadline: data.description,
           primaryCTA: { label: 'View Homes Here', href: '/coronado/homes-for-sale/' },
           secondaryCTA: { label: 'Get the Hot Sheet', href: '/off-market/' },
         }}
@@ -152,14 +167,14 @@ export default function NeighborhoodPage({ params }: { params: { slug: string } 
 
       <div className="container mx-auto px-4 py-12">
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-serif text-primary mb-4">About {neighborhood.title}</h2>
-          <p className="text-secondary mb-6">{neighborhood.intro}</p>
+          <h2 className="text-2xl font-serif text-primary mb-4">About {data.title}</h2>
+          <p className="text-secondary mb-6">{data.intro}</p>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h3 className="font-semibold text-primary mb-2">Best For</h3>
               <ul className="text-secondary text-sm space-y-1">
-                {neighborhood.highlights.bestFor.map((item: string, i: number) => (
+                {data.highlights.bestFor.map((item: string, i: number) => (
                   <li key={i}>• {item}</li>
                 ))}
               </ul>
@@ -167,7 +182,7 @@ export default function NeighborhoodPage({ params }: { params: { slug: string } 
             <div>
               <h3 className="font-semibold text-primary mb-2">Housing Types</h3>
               <ul className="text-secondary text-sm space-y-1">
-                {neighborhood.highlights.housingTypes.map((item: string, i: number) => (
+                {data.highlights.housingTypes.map((item: string, i: number) => (
                   <li key={i}>• {item}</li>
                 ))}
               </ul>
@@ -180,8 +195,8 @@ export default function NeighborhoodPage({ params }: { params: { slug: string } 
             title: 'Frequently Asked Questions',
             items: [
               {
-                q: `What makes ${neighborhood.title} unique?`,
-                a: neighborhood.intro,
+                q: `What makes ${data.title} unique?`,
+                a: data.intro,
               },
               {
                 q: 'Are there homes for sale in this neighborhood?',

@@ -10,6 +10,7 @@ import FinalCTA from '@/components/FinalCTA'
 import homeData from '@/data/home.json'
 import { generateMetadata as genMeta } from '@/lib/seo'
 import { WebsiteSchema } from '@/lib/schema/website'
+import type { ComponentProps } from 'react'
 
 export const metadata = genMeta({
   title: 'Find Your Place in Coronado | Crown Coronado Real Estate',
@@ -17,12 +18,26 @@ export const metadata = genMeta({
   canonical: '/',
 })
 
+type SectionContentMap = {
+  hero: ComponentProps<typeof HeroSplit>['content']
+  fastPaths: ComponentProps<typeof FastPathCards>['content']
+  marketSnapshot: ComponentProps<typeof MarketSnapshot>['content']
+  whyChoose: ComponentProps<typeof WhyChooseUs>['content']
+  neighborhoodExplorer: ComponentProps<typeof NeighborhoodExplorer>['content']
+  guides: ComponentProps<typeof GuidesGrid>['content']
+  testimonials: ComponentProps<typeof TestimonialsStrip>['content']
+  finalCTA: ComponentProps<typeof FinalCTA>['content']
+}
+
+const getSectionContent = <T extends keyof SectionContentMap>(id: T) =>
+  homeData.sections.find((section) => section.id === id)?.content as SectionContentMap[T] | undefined
+
 export default function Home() {
   return (
     <div className="min-h-screen">
       <WebsiteSchema />
       {/* Hero (split: copy + image) + primary CTA */}
-      <HeroSplit content={homeData.sections.find(s => s.id === 'hero')?.content} />
+      <HeroSplit content={getSectionContent('hero')} />
 
       <div className="container mx-auto px-4 py-8">
         {/* Search Card */}
@@ -34,37 +49,37 @@ export default function Home() {
 
         {/* Fast Paths */}
         <div className="mb-12">
-          <FastPathCards content={homeData.sections.find(s => s.id === 'fastPaths')?.content} />
+          <FastPathCards content={getSectionContent('fastPaths')} />
         </div>
 
         {/* Market Snapshot */}
         <div className="mb-12">
-          <MarketSnapshot content={homeData.sections.find(s => s.id === 'marketSnapshot')?.content} />
+          <MarketSnapshot content={getSectionContent('marketSnapshot')} />
         </div>
 
         {/* Why Crown Coronado */}
         <div className="mb-12">
-          <WhyChooseUs content={homeData.sections.find(s => s.id === 'whyChoose')?.content} />
+          <WhyChooseUs content={getSectionContent('whyChoose')} />
         </div>
 
         {/* Neighborhood Explorer */}
         <div className="mb-12">
-          <NeighborhoodExplorer content={homeData.sections.find(s => s.id === 'neighborhoodExplorer')?.content} />
+          <NeighborhoodExplorer content={getSectionContent('neighborhoodExplorer')} />
         </div>
 
         {/* Guides Grid */}
         <div className="mb-12">
-          <GuidesGrid content={homeData.sections.find(s => s.id === 'guides')?.content} />
+          <GuidesGrid content={getSectionContent('guides')} />
         </div>
 
         {/* Testimonials Strip - Full Width */}
         <div className="mb-12">
-          <TestimonialsStrip content={homeData.sections.find(s => s.id === 'testimonials')?.content} />
+          <TestimonialsStrip content={getSectionContent('testimonials')} />
         </div>
 
         {/* Final CTA */}
         <div className="mb-12">
-          <FinalCTA content={homeData.sections.find(s => s.id === 'finalCTA')?.content} />
+          <FinalCTA content={getSectionContent('finalCTA')} />
         </div>
       </div>
     </div>

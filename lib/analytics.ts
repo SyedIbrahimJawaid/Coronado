@@ -24,8 +24,9 @@ export function initGA4(measurementId: string) {
 
   // Initialize dataLayer
   window.dataLayer = window.dataLayer || []
+  const dataLayer = window.dataLayer
   window.gtag = function (...args: any[]) {
-    window.dataLayer.push(args)
+    dataLayer.push(args)
   }
 
   window.gtag('js', new Date())

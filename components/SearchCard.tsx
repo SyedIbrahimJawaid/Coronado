@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { trackSearch } from '@/lib/analytics'
 
 export default function SearchCard() {
   const [searchParams, setSearchParams] = useState({

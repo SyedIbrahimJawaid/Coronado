@@ -1,7 +1,7 @@
 interface StepsProps {
   content?: {
     title?: string
-    steps?: Array<{ title: string; body: string }>
+    steps?: Array<{ title: string; body?: string; description?: string }>
   }
 }
 
@@ -27,7 +27,7 @@ export default function Steps({ content }: StepsProps) {
 
             <div className="bg-white rounded-xl p-6 shadow-md h-full pt-8">
               <h3 className="text-xl font-semibold text-primary mb-3">{step.title}</h3>
-              <p className="text-secondary">{step.body}</p>
+              <p className="text-secondary">{step.body ?? step.description ?? ''}</p>
             </div>
           </div>
         ))}

@@ -56,7 +56,7 @@ export default function CondosForSalePage() {
             items: [
               {
                 q: 'What are HOA fees like in Coronado?',
-                a: 'HOA fees vary by building and amenities. Beachfront properties typically have higher fees due to maintenance and amenities. We can provide specific details for properties you're interested in.',
+                a: "HOA fees vary by building and amenities. Beachfront properties typically have higher fees due to maintenance and amenities. We can provide specific details for properties you're interested in.",
               },
               {
                 q: 'Which areas have the best condo inventory?',

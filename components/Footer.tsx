@@ -8,15 +8,6 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Column 1 */}
           <div>
-            <div className="relative h-16 w-auto mb-4">
-              <Image
-                src="/crown-coronado-logo.png"
-                alt="Crown Coronado - Coronado Island • San Diego"
-                width={180}
-                height={72}
-                className="object-contain h-full w-auto brightness-0 invert"
-              />
-            </div>
             <div className="relative h-12 w-auto mb-4">
               <Image
                 src="/logo-icon.png"

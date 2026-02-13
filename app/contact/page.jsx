@@ -22,7 +22,7 @@ export default function ContactPage() {
           <LeadForm
             content={{
               title: 'Contact Us',
-              subtitle: 'Fill out the form below and we'll get back to you soon.',
+              subtitle: "Fill out the form below and we'll get back to you soon.",
               fields: [
                 {
                   key: 'name',
