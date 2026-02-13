@@ -1,5 +1,4 @@
 import HeroSplit from '@/components/HeroSplit'
-import SearchCard from '@/components/SearchCard'
 import FastPathCards from '@/components/FastPathCards'
 import MarketSnapshot from '@/components/MarketSnapshot'
 import WhyChooseUs from '@/components/WhyChooseUs'
@@ -19,51 +18,45 @@ export const metadata = genMeta({
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <WebsiteSchema />
-      {/* Hero (split: copy + image) + primary CTA */}
+      
+      {/* Hero Section with Full-Width Background Image and Integrated Search */}
       <HeroSplit content={homeData.sections.find(s => s.id === 'hero')?.content} />
 
-      <div className="container mx-auto px-4 py-8">
-        {/* Search Card */}
-        <div className="mb-12">
-          <div className="bg-white rounded-xl shadow-md p-6 max-w-4xl mx-auto">
-            <SearchCard />
-          </div>
-        </div>
-
-        {/* Fast Paths */}
-        <div className="mb-12">
+      <div className="container mx-auto px-4 py-12">
+        {/* Property Categories - Scrollable Cards */}
+        <div className="mb-16">
           <FastPathCards content={homeData.sections.find(s => s.id === 'fastPaths')?.content} />
         </div>
 
         {/* Market Snapshot */}
-        <div className="mb-12">
+        <div className="mb-16">
           <MarketSnapshot content={homeData.sections.find(s => s.id === 'marketSnapshot')?.content} />
         </div>
 
-        {/* Why Crown Coronado */}
-        <div className="mb-12">
-          <WhyChooseUs content={homeData.sections.find(s => s.id === 'whyChoose')?.content} />
-        </div>
-
         {/* Neighborhood Explorer */}
-        <div className="mb-12">
+        <div className="mb-16">
           <NeighborhoodExplorer content={homeData.sections.find(s => s.id === 'neighborhoodExplorer')?.content} />
         </div>
 
         {/* Guides Grid */}
-        <div className="mb-12">
+        <div className="mb-16">
           <GuidesGrid content={homeData.sections.find(s => s.id === 'guides')?.content} />
         </div>
 
+        {/* Why Crown Coronado */}
+        <div className="mb-16">
+          <WhyChooseUs content={homeData.sections.find(s => s.id === 'whyChoose')?.content} />
+        </div>
+
         {/* Testimonials Strip - Full Width */}
-        <div className="mb-12">
+        <div className="mb-16">
           <TestimonialsStrip content={homeData.sections.find(s => s.id === 'testimonials')?.content} />
         </div>
 
         {/* Final CTA */}
-        <div className="mb-12">
+        <div className="mb-16">
           <FinalCTA content={homeData.sections.find(s => s.id === 'finalCTA')?.content} />
         </div>
       </div>

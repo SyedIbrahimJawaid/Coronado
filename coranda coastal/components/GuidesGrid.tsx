@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface GuidesGridProps {
   content?: {
     title?: string
-    cards?: Array<{ title: string; excerpt: string; href: string; tag?: string }>
+    cards?: Array<{ title: string; excerpt: string; href: string; tag?: string; image?: string }>
   }
 }
 
@@ -37,29 +38,42 @@ export default function GuidesGrid({ content }: GuidesGridProps) {
         {content?.title || 'Guides'}
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {cards.map((card, index) => (
-          <Link
-            key={index}
-            href={card.href}
-            className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
-          >
-            <div className="p-6">
-              {card.tag && (
-                <span className="inline-block text-xs font-medium text-primary bg-accent/20 px-3 py-1 rounded-full mb-3">
-                  {card.tag}
-                </span>
+      {/* Horizontal Scrollable Cards */}
+      <div className="overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
+        <div className="flex gap-6 min-w-max">
+          {cards.map((card, index) => (
+            <Link
+              key={index}
+              href={card.href}
+              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow min-w-[280px] md:min-w-[320px] flex-shrink-0"
+            >
+              {card.image && (
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
               )}
-              <h3 className="text-xl font-semibold text-primary mb-2 group-hover:underline">
-                {card.title}
-              </h3>
-              <p className="text-secondary">{card.excerpt}</p>
-              <span className="text-primary text-sm font-medium mt-4 inline-block group-hover:underline">
-                Read Guide →
-              </span>
-            </div>
-          </Link>
-        ))}
+              <div className="p-6">
+                {card.tag && (
+                  <span className="inline-block text-xs font-medium text-primary bg-accent/20 px-3 py-1 rounded-full mb-3">
+                    {card.tag}
+                  </span>
+                )}
+                <h3 className="text-xl font-semibold text-primary mb-2 group-hover:underline">
+                  {card.title}
+                </h3>
+                <p className="text-secondary">{card.excerpt}</p>
+                <span className="text-primary text-sm font-medium mt-4 inline-block group-hover:underline">
+                  Read Guide →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="text-center mt-8">
@@ -68,9 +82,6 @@ export default function GuidesGrid({ content }: GuidesGridProps) {
           className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition-colors"
         >
           View Market Report
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
         </Link>
       </div>
     </section>

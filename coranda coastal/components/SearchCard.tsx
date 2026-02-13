@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { trackSearch } from '@/lib/analytics'
 
 export default function SearchCard() {
   const [searchParams, setSearchParams] = useState({
@@ -29,12 +30,12 @@ export default function SearchCard() {
 
   return (
     <div>
-      <form onSubmit={handleSearch} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <form onSubmit={handleSearch}>
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
           <select
             value={searchParams.location}
             onChange={(e) => setSearchParams({ ...searchParams, location: e.target.value })}
-            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
           >
             <option value="">Location</option>
             <option value="coronado">Coronado</option>
@@ -46,7 +47,7 @@ export default function SearchCard() {
           <select
             value={searchParams.minPrice}
             onChange={(e) => setSearchParams({ ...searchParams, minPrice: e.target.value })}
-            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
           >
             <option value="">Min Price</option>
             <option value="500000">$500K</option>
@@ -58,7 +59,7 @@ export default function SearchCard() {
           <select
             value={searchParams.maxPrice}
             onChange={(e) => setSearchParams({ ...searchParams, maxPrice: e.target.value })}
-            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
           >
             <option value="">Max Price</option>
             <option value="2000000">$2M</option>
@@ -70,7 +71,7 @@ export default function SearchCard() {
           <select
             value={searchParams.beds}
             onChange={(e) => setSearchParams({ ...searchParams, beds: e.target.value })}
-            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
           >
             <option value="">Beds</option>
             <option value="1">1+</option>
@@ -82,7 +83,7 @@ export default function SearchCard() {
           <select
             value={searchParams.baths}
             onChange={(e) => setSearchParams({ ...searchParams, baths: e.target.value })}
-            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="px-4 py-3 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
           >
             <option value="">Baths</option>
             <option value="1">1+</option>
@@ -90,20 +91,13 @@ export default function SearchCard() {
             <option value="3">3+</option>
             <option value="4">4+</option>
           </select>
-        </div>
 
-        <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition-colors font-medium"
+            className="bg-primary text-white px-4 py-3 rounded-lg hover:bg-secondary transition-colors font-medium text-sm md:text-base col-span-2 md:col-span-1"
           >
             Search
           </button>
-          <div className="text-sm text-secondary">
-            <Link href="/coronado/homes-for-sale/" className="hover:text-primary underline">
-              Browse all listings
-            </Link>
-          </div>
         </div>
       </form>
     </div>

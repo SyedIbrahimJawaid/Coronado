@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import SearchCard from './SearchCard'
 
 interface HeroSplitProps {
   content?: {
@@ -23,60 +24,51 @@ export default function HeroSplit({ content }: HeroSplitProps) {
   const data = content || defaultContent
 
   return (
-    <section className="relative min-h-[600px] flex items-center bg-gradient-to-br from-accent/10 to-background">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Copy */}
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-serif text-primary leading-tight">
+    <section className="relative min-h-[700px] flex items-center">
+      {/* Full-width background image */}
+      {data.image && (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={data.image}
+            alt="Coronado Island"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+      )}
+
+      {/* Content overlay */}
+      <div className="relative z-10 w-full container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Headline */}
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight">
               {data.headline}
             </h1>
-            <p className="text-xl text-secondary">
+            <p className="text-xl md:text-2xl text-white/90">
               {data.subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              {data.primaryCTA && (
-                <Link
-                  href={data.primaryCTA.href}
-                  className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-secondary transition-colors text-center font-medium"
-                >
-                  {data.primaryCTA.label}
-                </Link>
-              )}
-              {data.secondaryCTA && (
-                <Link
-                  href={data.secondaryCTA.href}
-                  className="border-2 border-primary text-primary px-8 py-4 rounded-lg hover:bg-primary hover:text-white transition-colors text-center font-medium"
-                >
-                  {data.secondaryCTA.label}
-                </Link>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-4 text-sm text-secondary">
-              <Link href="/about/" className="hover:text-primary underline">
-                Local Expert
-              </Link>
-              <Link href="/off-market/" className="hover:text-primary underline">
-                Off-Market Access
-              </Link>
-              <Link href="/coronado/market-report/" className="hover:text-primary underline">
-                Monthly Market Report
-              </Link>
-            </div>
           </div>
 
-          {/* Right: Image */}
-          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10" />
-            {data.image && (
-              <Image
-                src={data.image}
-                alt="Coronado Island"
-                fill
-                className="object-cover"
-                priority
-              />
-            )}
+          {/* Search Bar */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-6 max-w-5xl mx-auto">
+            <SearchCard />
+          </div>
+
+          {/* Informational Links */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
+            <Link href="/about/" className="text-white hover:text-accent transition-colors underline">
+              Local Expert
+            </Link>
+            <Link href="/off-market/" className="text-white hover:text-accent transition-colors underline">
+              Off-Market Access
+            </Link>
+            <Link href="/coronado/market-report/" className="text-white hover:text-accent transition-colors underline">
+              Monthly Market Report
+            </Link>
           </div>
         </div>
       </div>

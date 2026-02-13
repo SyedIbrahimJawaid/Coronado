@@ -70,15 +70,18 @@
         "kpis": [
           {
             "label": "Median Price",
-            "value": "$2.4M"
+            "value": "$2.4M",
+            "image": "/market-homes.jpg"
           },
           {
             "label": "Active Listings",
-            "value": "42"
+            "value": "42",
+            "image": "/market-condos.jpg"
           },
           {
             "label": "Avg Days on Market",
-            "value": "28"
+            "value": "28",
+            "image": "/market-waterfront.jpg"
           }
         ],
         "cta": {
@@ -122,22 +125,26 @@
           {
             "title": "Moving to Coronado",
             "subtitle": "Everything you need to know",
-            "href": "/guides/moving-to-coronado/"
+            "href": "/guides/moving-to-coronado/",
+            "image": "/neighborhood-moving.jpg"
           },
           {
             "title": "Coronado Shores",
             "subtitle": "Beachfront condos",
-            "href": "/coronado/coronado-shores/"
+            "href": "/coronado/coronado-shores/",
+            "image": "/neighborhood-shores.jpg"
           },
           {
             "title": "Coronado Cays",
             "subtitle": "Waterfront docks",
-            "href": "/coronado/coronado-cays/"
+            "href": "/coronado/coronado-cays/",
+            "image": "/neighborhood-cays.jpg"
           },
           {
             "title": "Village",
             "subtitle": "Walkable, classic Coronado",
-            "href": "/coronado/neighborhoods/village/"
+            "href": "/coronado/neighborhoods/village/",
+            "image": "/neighborhood-village.jpg"
           }
         ]
       }
@@ -152,19 +159,22 @@
             "title": "Moving to Coronado",
             "excerpt": "A guide for new residents",
             "href": "/guides/moving-to-coronado/",
-            "tag": "Buyer Guide"
+            "tag": "Buyer Guide",
+            "image": "/guide-moving.jpg"
           },
           {
             "title": "Cost of Living in Coronado",
             "excerpt": "Understanding expenses and lifestyle",
             "href": "/guides/cost-of-living/",
-            "tag": "Lifestyle"
+            "tag": "Lifestyle",
+            "image": "/guide-cost.jpg"
           },
           {
             "title": "Coronado Shores Guide",
             "excerpt": "Beachfront living and HOA insights",
             "href": "/guides/coronado-shores/",
-            "tag": "Neighborhood"
+            "tag": "Neighborhood",
+            "image": "/guide-shores.jpg"
           }
         ]
       }
