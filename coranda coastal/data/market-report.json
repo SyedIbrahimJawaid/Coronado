@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "Coronado Real Estate Market Report (Updated Monthly) | Crown Coronado",
+    "description": "Monthly Coronado market report with inventory, pricing, days on market, and trend insights for buyers and sellers.",
+    "canonical": "https://crowncoronado.com/coronado/market-report/"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "heroSplit",
+      "content": {
+        "headline": "Coronado Market Report",
+        "subheadline": "Fresh, data-driven insights for smarter buying and selling decisions.",
+        "primaryCTA": {
+          "label": "Join the Hot Sheet",
+          "href": "/off-market/"
+        },
+        "secondaryCTA": {
+          "label": "View Homes for Sale",
+          "href": "/coronado/homes-for-sale/"
+        },
+        "image": "/hero-coronado.jpg"
+      }
+    },
+    {
+      "id": "kpis",
+      "type": "kpiGrid",
+      "content": {
+        "kpis": [
+          {
+            "label": "Median Price",
+            "value": "$2.4M"
+          },
+          {
+            "label": "Active Listings",
+            "value": "42"
+          },
+          {
+            "label": "New Listings (30d)",
+            "value": "12"
+          },
+          {
+            "label": "Avg Days on Market",
+            "value": "28"
+          },
+          {
+            "label": "Price / Sq Ft",
+            "value": "$1,200"
+          },
+          {
+            "label": "Sold (30d)",
+            "value": "8"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "content": {
+        "title": "Market Report FAQ",
+        "items": [
+          {
+            "q": "How often is this updated?",
+            "a": "Monthly, with the last updated date shown at the top. Data is refreshed on the first of each month."
+          },
+          {
+            "q": "Can I get alerts when conditions change?",
+            "a": "Yes. Join the Hot Sheet for weekly updates and key market changes delivered to your inbox."
+          },
+          {
+            "q": "Do these numbers guarantee timing outcomes?",
+            "a": "No. Market data is informational and helps estimate conditions. Individual results depend on property-specific factors, your constraints, and market dynamics."
+          },
+          {
+            "q": "What data sources do you use?",
+            "a": "We combine MLS listing data with our internal analytics and AI-driven market signals to provide comprehensive insights."
+          },
+          {
+            "q": "How do I interpret the trends?",
+            "a": "Rising inventory and increasing price reductions often favor buyers. Tight inventory with low DOM typically favors sellers. Context matters - consult with our team for personalized insights."
+          }
+        ]
+      }
+    }
+  ]
+}
+
