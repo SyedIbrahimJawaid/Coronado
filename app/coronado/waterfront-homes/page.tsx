@@ -2,6 +2,7 @@ import HeroSplit from '@/components/HeroSplit'
 import SearchCard from '@/components/SearchCard'
 import FAQ from '@/components/FAQ'
 import InternalLinks from '@/components/InternalLinks'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -12,7 +13,7 @@ export const metadata = genMeta({
 
 export default function WaterfrontHomesPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: 'Coronado Waterfront Homes',
@@ -62,7 +63,7 @@ export default function WaterfrontHomesPage() {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

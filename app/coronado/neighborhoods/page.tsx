@@ -1,5 +1,6 @@
 import HeroSplit from '@/components/HeroSplit'
 import NeighborhoodExplorer from '@/components/NeighborhoodExplorer'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -10,13 +11,15 @@ export const metadata = genMeta({
 
 export default function NeighborhoodsHubPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: 'Coronado Neighborhoods',
           subheadline: 'Discover the unique character and lifestyle of each Coronado neighborhood.',
           primaryCTA: { label: 'Get the Hot Sheet', href: '/off-market/' },
           secondaryCTA: { label: 'View Homes for Sale', href: '/coronado/homes-for-sale/' },
+          image: '/hero-coronado.png',
+          useBackgroundImage: true,
         }}
       />
 
@@ -59,7 +62,7 @@ export default function NeighborhoodsHubPage() {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

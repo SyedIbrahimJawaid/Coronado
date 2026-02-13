@@ -122,22 +122,26 @@
           {
             "title": "Moving to Coronado",
             "subtitle": "Everything you need to know",
-            "href": "/guides/moving-to-coronado/"
+            "href": "/guides/moving-to-coronado/",
+            "image": "/city.png"
           },
           {
             "title": "Coronado Shores",
             "subtitle": "Beachfront condos",
-            "href": "/coronado/coronado-shores/"
+            "href": "/coronado/coronado-shores/",
+            "image": "/shores.jpg"
           },
           {
             "title": "Coronado Cays",
             "subtitle": "Waterfront docks",
-            "href": "/coronado/coronado-cays/"
+            "href": "/coronado/coronado-cays/",
+            "image": "/cays.jpg"
           },
           {
             "title": "Village",
             "subtitle": "Walkable, classic Coronado",
-            "href": "/coronado/neighborhoods/village/"
+            "href": "/coronado/neighborhoods/village/",
+            "image": "/city.png"
           }
         ]
       }

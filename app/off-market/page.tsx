@@ -2,7 +2,8 @@ import HeroSplit from '@/components/HeroSplit'
 import LeadForm from '@/components/LeadForm'
 import FAQ from '@/components/FAQ'
 import Steps from '@/components/Steps'
-import offMarketData from '@/data/off-market.json'
+import PageWrapper from '@/components/PageWrapper'
+import offMarketData from '@/off-market.json'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -13,7 +14,7 @@ export const metadata = genMeta({
 
 export default function OffMarketPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit content={offMarketData.sections.find(s => s.id === 'hero')?.content} />
       
       <div className="container mx-auto px-4 py-12">
@@ -27,7 +28,7 @@ export default function OffMarketPage() {
       <div className="container mx-auto px-4 py-12">
         <FAQ content={offMarketData.sections.find(s => s.id === 'faq')?.content} />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

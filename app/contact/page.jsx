@@ -1,4 +1,5 @@
 import LeadForm from '@/components/LeadForm'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -9,7 +10,7 @@ export const metadata = genMeta({
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-serif text-primary mb-4 text-center">
@@ -55,7 +56,7 @@ export default function ContactPage() {
           />
         </div>
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

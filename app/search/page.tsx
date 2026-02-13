@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import SearchCard from '@/components/SearchCard'
+import PageWrapper from '@/components/PageWrapper'
 
 // Search pages are noindex with canonical to base listing pages
 export const metadata: Metadata = {
@@ -16,14 +17,14 @@ export const metadata: Metadata = {
 
 export default function SearchPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-3xl font-serif text-primary mb-8">Search Coronado Properties</h1>
         <div className="bg-white rounded-xl shadow-md p-6">
           <SearchCard />
         </div>
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

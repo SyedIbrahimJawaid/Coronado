@@ -2,8 +2,10 @@ import HeroSplit from '@/components/HeroSplit'
 import KPIGrid from '@/components/KPIGrid'
 import FAQ from '@/components/FAQ'
 import InternalLinks from '@/components/InternalLinks'
-import marketReportData from '@/data/market-report.json'
+import PageWrapper from '@/components/PageWrapper'
+import marketReportData from '@/market-report.json'
 import { generateMetadata as genMeta } from '@/lib/seo'
+import type { ComponentProps } from 'react'
 
 export const metadata = genMeta({
   title: 'Coronado Real Estate Market Report (Updated Monthly) | Crown Coronado',
@@ -11,13 +13,24 @@ export const metadata = genMeta({
   canonical: '/coronado/market-report/',
 })
 
+type SectionContentMap = {
+  hero: ComponentProps<typeof HeroSplit>['content']
+  kpis: ComponentProps<typeof KPIGrid>['content']
+  faq: ComponentProps<typeof FAQ>['content']
+}
+
+const getSectionContent = <T extends keyof SectionContentMap>(id: T) =>
+  marketReportData.sections.find((section) => section.id === id)?.content as
+    | SectionContentMap[T]
+    | undefined
+
 export default function MarketReportPage() {
   return (
-    <div className="min-h-screen">
-      <HeroSplit content={marketReportData.sections.find(s => s.id === 'hero')?.content} />
+    <PageWrapper>
+      <HeroSplit content={getSectionContent('hero')} />
 
       <div className="container mx-auto px-4 py-12">
-        <KPIGrid content={marketReportData.sections.find(s => s.id === 'kpis')?.content} />
+        <KPIGrid content={getSectionContent('kpis')} />
       </div>
 
       <div className="container mx-auto px-4 py-12">
@@ -45,7 +58,7 @@ export default function MarketReportPage() {
           </div>
         </div>
 
-        <FAQ content={marketReportData.sections.find(s => s.id === 'faq')?.content} />
+        <FAQ content={getSectionContent('faq')} />
 
         {/* Internal Links */}
         <div className="mt-8">
@@ -69,7 +82,7 @@ export default function MarketReportPage() {
           </p>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

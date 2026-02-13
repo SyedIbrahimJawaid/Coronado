@@ -1,5 +1,6 @@
 import HeroSplit from '@/components/HeroSplit'
 import GuidesGrid from '@/components/GuidesGrid'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -10,13 +11,15 @@ export const metadata = genMeta({
 
 export default function GuidesPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: 'Coronado Real Estate Guides',
           subheadline: 'Expert insights and comprehensive guides about Coronado Island real estate, neighborhoods, and lifestyle.',
           primaryCTA: { label: 'Get the Hot Sheet', href: '/off-market/' },
           secondaryCTA: { label: 'View Homes', href: '/coronado/homes-for-sale/' },
+          image: '/hero-coronado.png',
+          useBackgroundImage: true,
         }}
       />
 
@@ -47,7 +50,7 @@ export default function GuidesPage() {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

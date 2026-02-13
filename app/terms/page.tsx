@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -8,7 +9,7 @@ export const metadata = genMeta({
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-serif text-primary mb-8">Terms of Service</h1>
@@ -71,7 +72,7 @@ export default function TermsPage() {
           </div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

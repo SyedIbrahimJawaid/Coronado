@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="relative h-12 w-auto mb-4">
               <Image
-                src="/logo-icon.png"
+                src="/logo.png"
                 alt="Coronado Coastal"
                 width={120}
                 height={48}

@@ -2,6 +2,7 @@ import HeroSplit from '@/components/HeroSplit'
 import SearchCard from '@/components/SearchCard'
 import FAQ from '@/components/FAQ'
 import InternalLinks from '@/components/InternalLinks'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -12,13 +13,15 @@ export const metadata = genMeta({
 
 export default function CondosForSalePage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: 'Coronado Condos for Sale',
           subheadline: 'Beachfront condos, village condos, and Coronado Shores listings.',
           primaryCTA: { label: 'Get the Hot Sheet', href: '/off-market/' },
           secondaryCTA: { label: 'View Market Report', href: '/coronado/market-report/' },
+          image: '/hero-coronado.png',
+          useBackgroundImage: true,
         }}
       />
 
@@ -66,7 +69,7 @@ export default function CondosForSalePage() {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

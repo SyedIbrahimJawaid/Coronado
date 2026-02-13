@@ -1,6 +1,7 @@
 import HeroSplit from '@/components/HeroSplit'
 import Steps from '@/components/Steps'
 import FinalCTA from '@/components/FinalCTA'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -11,7 +12,7 @@ export const metadata = genMeta({
 
 export default function BuyersPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: 'Buying a Home in Coronado',
@@ -65,7 +66,7 @@ export default function BuyersPage() {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

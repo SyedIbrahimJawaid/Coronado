@@ -58,7 +58,7 @@ coranda coastal/
 │   ├── off-market.json
 │   └── market-report.json
 └── public/                # Static assets
-    └── logo-icon.png      # Logo/favicon
+   └── logo.png           # Logo/favicon
 ```
 
 ## Design System
@@ -130,7 +130,7 @@ coranda coastal/
 
 ## Notes
 
-- Logo image is located at `/public/logo-icon.png`
+- Logo image is located at `/public/logo.png`
 - All components are TypeScript-based
 - Responsive design with mobile-first approach
 - Components are reusable and JSON-driven

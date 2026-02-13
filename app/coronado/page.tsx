@@ -1,6 +1,7 @@
 import HeroSplit from '@/components/HeroSplit'
 import FastPathCards from '@/components/FastPathCards'
 import WhyChooseUs from '@/components/WhyChooseUs'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 export const metadata = genMeta({
@@ -11,7 +12,7 @@ export const metadata = genMeta({
 
 export default function CoronadoHubPage() {
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: 'Coronado Island Real Estate',
@@ -93,7 +94,7 @@ export default function CoronadoHubPage() {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

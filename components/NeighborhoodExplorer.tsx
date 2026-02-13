@@ -2,11 +2,12 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface NeighborhoodExplorerProps {
   content?: {
     title?: string
-    items?: Array<{ title: string; subtitle: string; href: string }>
+    items?: Array<{ title: string; subtitle: string; href: string; image?: string }>
   }
 }
 
@@ -16,21 +17,25 @@ export default function NeighborhoodExplorer({ content }: NeighborhoodExplorerPr
       title: 'Moving to Coronado',
       subtitle: 'Everything you need to know',
       href: '/guides/moving-to-coronado/',
+      image: '/homes.jpg',
     },
     {
       title: 'Coronado Shores',
       subtitle: 'Beachfront condos',
       href: '/coronado/coronado-shores/',
+      image: '/shores.jpg',
     },
     {
       title: 'Coronado Cays',
       subtitle: 'Waterfront docks',
       href: '/coronado/coronado-cays/',
+      image: '/cays.jpg',
     },
     {
       title: 'Village',
       subtitle: 'Walkable, classic Coronado',
       href: '/coronado/neighborhoods/village/',
+      image: '/city.png',
     },
   ]
 
@@ -57,13 +62,27 @@ export default function NeighborhoodExplorer({ content }: NeighborhoodExplorerPr
           <Link
             key={index}
             href={item.href}
-            className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow"
+            className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
-            <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
-            <p className="text-sm text-secondary">{item.subtitle}</p>
-            <span className="text-primary text-sm font-medium mt-3 inline-block group-hover:underline">
-              Explore →
-            </span>
+            <div className="relative h-48 overflow-hidden">
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              ) : (
+                <div className="w-full h-full bg-accent/20" />
+              )}
+            </div>
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
+              <p className="text-sm text-secondary">{item.subtitle}</p>
+              <span className="text-primary text-sm font-medium mt-3 inline-block group-hover:underline">
+                Explore →
+              </span>
+            </div>
           </Link>
         ))}
       </div>
@@ -79,13 +98,27 @@ export default function NeighborhoodExplorer({ content }: NeighborhoodExplorerPr
               <div key={index} className="min-w-full px-2">
                 <Link
                   href={item.href}
-                  className="block bg-white rounded-xl p-6 shadow-md"
+                  className="block bg-white rounded-xl overflow-hidden shadow-md"
                 >
-                  <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
-                  <p className="text-sm text-secondary">{item.subtitle}</p>
-                  <span className="text-primary text-sm font-medium mt-3 inline-block">
-                    Explore →
-                  </span>
+                  <div className="relative h-48 overflow-hidden">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-accent/20" />
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
+                    <p className="text-sm text-secondary">{item.subtitle}</p>
+                    <span className="text-primary text-sm font-medium mt-3 inline-block">
+                      Explore →
+                    </span>
+                  </div>
                 </Link>
               </div>
             ))}

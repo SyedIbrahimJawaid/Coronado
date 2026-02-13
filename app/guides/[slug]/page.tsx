@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import HeroSplit from '@/components/HeroSplit'
 import FAQ from '@/components/FAQ'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 
 // This would typically come from a CMS or data file
@@ -49,7 +50,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: guide.title,
@@ -78,7 +79,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

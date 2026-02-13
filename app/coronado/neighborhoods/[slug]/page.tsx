@@ -4,6 +4,7 @@ import FAQ from '@/components/FAQ'
 import LocalIntel from '@/components/LocalIntel'
 import ProsCons from '@/components/ProsCons'
 import InternalLinks from '@/components/InternalLinks'
+import PageWrapper from '@/components/PageWrapper'
 import { generateMetadata as genMeta } from '@/lib/seo'
 import type { NeighborhoodContent } from '@/lib/content/neighborhood-template'
 
@@ -155,7 +156,7 @@ export default function NeighborhoodPage({ params }: { params: { slug: string } 
   }
 
   return (
-    <div className="min-h-screen">
+    <PageWrapper>
       <HeroSplit
         content={{
           headline: data.title,
@@ -206,7 +207,7 @@ export default function NeighborhoodPage({ params }: { params: { slug: string } 
           }}
         />
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

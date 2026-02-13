@@ -25,7 +25,8 @@
           "label": "View Homes for Sale",
           "href": "/coronado/homes-for-sale/"
         },
-        "image": "/hero-coronado.jpg"
+        "image": "/hero-coronado.png",
+        "useBackgroundImage": true
       }
     },
     {
