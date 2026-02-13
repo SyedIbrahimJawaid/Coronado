@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "title": "Find Your Place in Coronado | Crown Coronado Real Estate",
+    "description": "Homes, condos, waterfront – plus off-market access. AI-driven market analysis and wishlist-driven house hunting in Coronado Island.",
+    "canonical": "https://crowncoronado.com/"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "heroSplit",
+      "content": {
+        "headline": "Find Your Place in Coronado",
+        "subheadline": "Homes, condos, waterfront – plus off-market access.",
+        "primaryCTA": {
+          "label": "Get the Coronado Hot Sheet",
+          "href": "/off-market/"
+        },
+        "secondaryCTA": {
+          "label": "View Homes for Sale",
+          "href": "/coronado/homes-for-sale/"
+        },
+        "image": "/hero-coronado.jpg"
+      }
+    },
+    {
+      "id": "fastPaths",
+      "type": "fastPathCards",
+      "content": {
+        "title": "Explore Coronado",
+        "cards": [
+          {
+            "title": "Homes for Sale",
+            "subtitle": "Walkable, classic Coronado",
+            "href": "/coronado/homes-for-sale/",
+            "image": "/homes.jpg"
+          },
+          {
+            "title": "Condos",
+            "subtitle": "Beachfront and village",
+            "href": "/coronado/condos-for-sale/",
+            "image": "/condos.jpg"
+          },
+          {
+            "title": "Waterfront",
+            "subtitle": "Basinfront docks",
+            "href": "/coronado/waterfront-homes/",
+            "image": "/waterfront.jpg"
+          },
+          {
+            "title": "Coronado Shores",
+            "subtitle": "Beachfront condos",
+            "href": "/coronado/coronado-shores/",
+            "image": "/shores.jpg"
+          },
+          {
+            "title": "Coronado Cays",
+            "subtitle": "Waterfront docks",
+            "href": "/coronado/coronado-cays/",
+            "image": "/cays.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "marketSnapshot",
+      "type": "marketSnapshot",
+      "content": {
+        "title": "Market Snapshot",
+        "updatedLabel": "Updated monthly",
+        "kpis": [
+          {
+            "label": "Median Price",
+            "value": "$2.4M"
+          },
+          {
+            "label": "Active Listings",
+            "value": "42"
+          },
+          {
+            "label": "Avg Days on Market",
+            "value": "28"
+          }
+        ],
+        "cta": {
+          "label": "View Market Report",
+          "href": "/coronado/market-report/"
+        }
+      }
+    },
+    {
+      "id": "whyChoose",
+      "type": "whyChooseUs",
+      "content": {
+        "title": "Why Crown Coronado",
+        "cards": [
+          {
+            "title": "AI-Driven Market Analysis",
+            "body": "Inventory, reductions, DOM, and demand signals to support better timing decisions."
+          },
+          {
+            "title": "Off-Market Access",
+            "body": "Pocket listing access when available through our relationship-driven network."
+          },
+          {
+            "title": "Wishlist-Driven Hunting",
+            "body": "We preview, shortlist, and actively hunt for the right match based on your criteria."
+          },
+          {
+            "title": "International Buyer Network",
+            "body": "Distribution and demand awareness through our global investor email network."
+          }
+        ],
+        "proofLine": "Trusted by buyers and sellers across Coronado Island"
+      }
+    },
+    {
+      "id": "neighborhoodExplorer",
+      "type": "neighborhoodExplorer",
+      "content": {
+        "title": "Neighborhood Explorer",
+        "items": [
+          {
+            "title": "Moving to Coronado",
+            "subtitle": "Everything you need to know",
+            "href": "/guides/moving-to-coronado/"
+          },
+          {
+            "title": "Coronado Shores",
+            "subtitle": "Beachfront condos",
+            "href": "/coronado/coronado-shores/"
+          },
+          {
+            "title": "Coronado Cays",
+            "subtitle": "Waterfront docks",
+            "href": "/coronado/coronado-cays/"
+          },
+          {
+            "title": "Village",
+            "subtitle": "Walkable, classic Coronado",
+            "href": "/coronado/neighborhoods/village/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides",
+      "type": "guidesGrid",
+      "content": {
+        "title": "Guides",
+        "cards": [
+          {
+            "title": "Moving to Coronado",
+            "excerpt": "A guide for new residents",
+            "href": "/guides/moving-to-coronado/",
+            "tag": "Buyer Guide"
+          },
+          {
+            "title": "Cost of Living in Coronado",
+            "excerpt": "Understanding expenses and lifestyle",
+            "href": "/guides/cost-of-living/",
+            "tag": "Lifestyle"
+          },
+          {
+            "title": "Coronado Shores Guide",
+            "excerpt": "Beachfront living and HOA insights",
+            "href": "/guides/coronado-shores/",
+            "tag": "Neighborhood"
+          }
+        ]
+      }
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonialsStrip",
+      "content": {
+        "title": "What Our Clients Say",
+        "testimonials": [
+          {
+            "quote": "Crown Coronado helped us find our dream home off-market. Their market insights were spot-on.",
+            "author": "Sarah & John M.",
+            "location": "Coronado Shores"
+          },
+          {
+            "quote": "The team's attention to detail and local knowledge made all the difference in our search.",
+            "author": "Michael R.",
+            "location": "Coronado Cays"
+          },
+          {
+            "quote": "Professional, responsive, and truly understands the Coronado market. Highly recommend!",
+            "author": "Jennifer L.",
+            "location": "Village"
+          }
+        ],
+        "cta": {
+          "label": "Read More Reviews",
+          "href": "/reviews/"
+        }
+      }
+    },
+    {
+      "id": "finalCTA",
+      "type": "finalCTA",
+      "content": {
+        "title": "Get the Weekly Coronado Hot Sheet",
+        "subtitle": "New listings, price changes, and off-market opportunities delivered weekly.",
+        "formFields": [
+          {
+            "key": "name",
+            "label": "Your Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "key": "email",
+            "label": "Your Email",
+            "type": "email",
+            "required": true
+          }
+        ],
+        "submitLabel": "Subscribe",
+        "privacyNote": "We respect your privacy. Unsubscribe anytime."
+      }
+    }
+  ]
+}
