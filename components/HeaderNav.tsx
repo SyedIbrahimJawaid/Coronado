@@ -40,7 +40,7 @@ export default function HeaderNav() {
               isScrolled ? 'h-12' : 'h-16'
             }`}>
               <Image
-                src="/crown-coronado-logo.png"
+                src="/logo.png"
                 alt="Crown Coronado - Coronado Island • San Diego"
                 width={200}
                 height={80}

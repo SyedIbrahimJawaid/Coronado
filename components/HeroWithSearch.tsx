@@ -18,7 +18,7 @@ export default function HeroWithSearch({ content }: HeroWithSearchProps) {
     subheadline: 'Homes, condos, waterfront – plus off-market access.',
     primaryCTA: { label: 'Get the Coronado Hot Sheet', href: '/off-market/' },
     secondaryCTA: { label: 'View Homes for Sale', href: '/coronado/homes-for-sale/' },
-    image: '/hero-coronado.jpg',
+    image: '/hero-coronado.png',
   }
 
   const data = content || defaultContent

@@ -8,7 +8,7 @@ export default function SidebarCTA() {
         {/* Logo */}
         <div className="relative h-20 w-full mb-4 flex items-center justify-center">
           <Image
-            src="/crown-coronado-logo.png"
+            src="/logo.png"
             alt="Crown Coronado - Coronado Island • San Diego"
             width={180}
             height={72}
@@ -25,7 +25,7 @@ export default function SidebarCTA() {
         <div className="relative h-32 rounded-lg overflow-hidden mb-4">
           <div className="absolute inset-0 bg-accent/20" />
           <Image
-            src="/hero-coronado.jpg"
+            src="/hero-coronado.png"
             alt="Coronado"
             fill
             className="object-cover"

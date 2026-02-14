@@ -11,7 +11,7 @@ export function RealEstateAgentSchema() {
     '@type': 'RealEstateAgent',
     name: 'Crown Coronado',
     url: 'https://crowncoronado.com',
-    logo: 'https://crowncoronado.com/crown-coronado-logo.png',
+    logo: 'https://crowncoronado.com/logo.png',
     description: 'Coronado Island real estate experts specializing in homes, condos, and waterfront properties.',
     address: {
       '@type': 'PostalAddress',
