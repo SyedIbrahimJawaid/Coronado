@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <RealEstateAgentSchema />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <HeaderNav />
         <main>{children}</main>
         <Footer />

@@ -56,9 +56,19 @@ export default function Home() {
           <section className="relative min-h-[640px] overflow-hidden bg-primary">
             <div className="absolute inset-0">
               <Image
+                src="/mobile-hero.png"
+                alt="Coronado coastline"
+                fill
+                sizes="100vw"
+                className="object-cover md:hidden"
+                priority
+              />
+              <Image
                 src={heroImage}
                 alt="Coronado coastline"
                 fill
+                sizes="100vw"
+                className="object-cover hidden md:block"
                 priority
               />
             </div>

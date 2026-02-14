@@ -10,11 +10,10 @@ export default function Footer() {
           <div>
             <div className="relative h-12 w-auto mb-4">
               <Image
-                src="/logo.png"
+                src="/crown-coronado-logo.png"
                 alt="Coronado Coastal"
                 width={120}
                 height={48}
-                className="object-contain h-full w-auto brightness-0 invert"
               />
             </div>
             <p className="text-white/80 text-sm">
