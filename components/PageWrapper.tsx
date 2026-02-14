@@ -12,10 +12,17 @@ export default function PageWrapper({ children, className = '' }: PageWrapperPro
       {/* Background Image */}
       <div className="fixed inset-0 -z-10">
         <Image
+          src="/mobile-hero.png"
+          alt="Coronado background"
+          fill
+          className="object-cover opacity-70 md:hidden"
+          priority={false}
+        />
+        <Image
           src="/hero-coronado.png"
           alt="Coronado background"
           fill
-          className="object-cover opacity-70"
+          className="object-cover opacity-70 hidden md:block"
           priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-background/95" />

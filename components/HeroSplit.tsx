@@ -23,16 +23,26 @@ export default function HeroSplit({ content }: HeroSplitProps) {
   }
 
   const data = content || defaultContent
+  const desktopImage = data.image || '/hero-coronado.png'
+  const mobileImage = '/mobile-hero.png'
 
   // If useBackgroundImage is true, render with full-width background
-  if (data.useBackgroundImage && data.image) {
+  if (data.useBackgroundImage && desktopImage) {
     return (
       <section className="relative min-h-[600px] overflow-hidden bg-primary">
         <div className="absolute inset-0">
           <Image
-            src={data.image}
+            src={mobileImage}
             alt="Coronado background"
             fill
+            className="object-cover md:hidden"
+            priority
+          />
+          <Image
+            src={desktopImage}
+            alt="Coronado background"
+            fill
+            className="object-cover hidden md:block"
             priority
           />
         </div>
@@ -128,14 +138,23 @@ export default function HeroSplit({ content }: HeroSplitProps) {
           {/* Right: Image */}
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10" />
-            {data.image && (
-              <Image
-                src={data.image}
-                alt="Coronado Island"
-                fill
-                className="object-cover"
-                priority
-              />
+            {desktopImage && (
+              <>
+                <Image
+                  src={mobileImage}
+                  alt="Coronado Island"
+                  fill
+                  className="object-cover md:hidden"
+                  priority
+                />
+                <Image
+                  src={desktopImage}
+                  alt="Coronado Island"
+                  fill
+                  className="object-cover hidden md:block"
+                  priority
+                />
+              </>
             )}
           </div>
         </div>

@@ -22,20 +22,31 @@ export default function HeroWithSearch({ content }: HeroWithSearchProps) {
   }
 
   const data = content || defaultContent
+  const desktopImage = data.image || '/hero-coronado.png'
+  const mobileImage = '/mobile-hero.png'
 
   return (
     <section className="relative min-h-[500px] rounded-2xl overflow-hidden shadow-lg">
       {/* Background Image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent z-10" />
-        {data.image ? (
-          <Image
-            src={data.image}
-            alt="Coronado Island"
-            fill
-            className="object-cover"
-            priority
-          />
+        {desktopImage ? (
+          <>
+            <Image
+              src={mobileImage}
+              alt="Coronado Island"
+              fill
+              className="object-cover md:hidden"
+              priority
+            />
+            <Image
+              src={desktopImage}
+              alt="Coronado Island"
+              fill
+              className="object-cover hidden md:block"
+              priority
+            />
+          </>
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent/20" />
         )}
